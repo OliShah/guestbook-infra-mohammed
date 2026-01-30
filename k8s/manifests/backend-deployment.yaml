@@ -18,7 +18,7 @@ spec:
       containers:
         - name: backend
           image: registry.gitlab.com/nan-group9730204/guestbook-app-mohammed/backend-container:latest
-          imagePullPolicy: # set to always if image is not tagged with latest
+          imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - name: http
               containerPort: 8080

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  labels:
+    app: postgres
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: postgres
+          image: registry.gitlab.com/nan-group9730204/guestbook-app-mohammed/postgres-container
+          imagePullPolicy: Always # set to always if image is not tagged with latest
+          ports:
+            containerPort: 5432
+          resources: {}
+          volumeMounts:
+            - name: postgres
+              mountPath: /var/lib/postgresql/data
+
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-password
+                  key: DB_PASSWORD
