@@ -21,4 +21,4 @@ spec:
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
