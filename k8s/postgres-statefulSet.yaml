@@ -5,9 +5,12 @@ metadata:
   labels:
     app: postgres
 spec:
+  serviceName: postgres         
+  replicas: 1
   selector:
     matchLabels:
       app: postgres
+
   template:
     metadata:
       labels:
@@ -17,14 +20,12 @@ spec:
       containers:
         - name: postgres
           image: ghcr.io/olishah/postgres-container:latest
-          imagePullPolicy: Always # set to always if image is not tagged with latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 5432
-          resources: {}
           volumeMounts:
             - name: postgres
               mountPath: /var/lib/postgresql/data
-
           envFrom:
             - configMapRef:
                 name: postgres-config
@@ -35,12 +36,14 @@ spec:
                   name: db-password
                   key: DB_PASSWORD
 
-    volumeClaimTemplates:
+  volumeClaimTemplates:
     - metadata:
         name: postgres
       spec:
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: "lvms-vg1"
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: lvms-vg1
         resources:
           requests:
             storage: 1Gi
+
