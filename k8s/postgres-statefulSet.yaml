@@ -34,3 +34,13 @@ spec:
                 secretKeyRef:
                   name: db-password
                   key: DB_PASSWORD
+
+    volumeClaimTemplates:
+    - metadata:
+        name: postgres
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: "lvms-vg1"
+        resources:
+          requests:
+            storage: 1Gi
