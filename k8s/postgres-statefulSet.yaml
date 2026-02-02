@@ -16,7 +16,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: postgres
-          image: registry.gitlab.com/nan-group9730204/guestbook-app-mohammed/postgres-container
+          image: ghcr.io/olishah/postgres-container:latest
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             containerPort: 5432

@@ -17,7 +17,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: frontend
-          image: registry.gitlab.com/nan-group9730204/guestbook-app-mohammed/frontend-container:latest
+          image: ghcr.io/olishah/frontend-container:latest
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - name: http

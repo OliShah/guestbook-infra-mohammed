@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: registry.gitlab.com/nan-group9730204/guestbook-app-mohammed/redis-container
+          image: ghcr.io/olishah/redis-container:latest
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - containerPort: 6379
