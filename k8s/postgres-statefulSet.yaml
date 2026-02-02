@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres
-  labels:
-    app: postgres
 spec:
-  serviceName: "postgres"         
+  serviceName: postgres
   replicas: 1
   selector:
     matchLabels:
@@ -16,11 +14,9 @@ spec:
       labels:
         app: postgres
     spec:
-      serviceAccountName: default
       containers:
         - name: postgres
           image: ghcr.io/olishah/postgres-container:latest
-          imagePullPolicy: Always
           ports:
             - containerPort: 5432
           volumeMounts:
@@ -46,4 +42,3 @@ spec:
         resources:
           requests:
             storage: 1Gi
-
