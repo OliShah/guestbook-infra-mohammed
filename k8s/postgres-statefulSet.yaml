@@ -29,8 +29,8 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  #name: db-password
-                  name: postgres-secrets
+                  name: db-password
+                  #name: postgres-secrets
                   key: DB_PASSWORD
 
   volumeClaimTemplates:
