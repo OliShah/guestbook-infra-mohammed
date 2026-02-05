@@ -17,7 +17,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: backend
-          image: ghcr.io/olishah/backend-container:latest
+          image: ghcr.io/olishah/backend-container:3d95102299102e87eb9fb83025ba0b2301835d13
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - name: http
