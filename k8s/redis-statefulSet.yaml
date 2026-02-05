@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: ghcr.io/olishah/redis-container:3d95102299102e87eb9fb83025ba0b2301835d13
+          image: ghcr.io/olishah/redis-container:db40bc1f911f416b4bfd2513820f58e21b142ba9
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - containerPort: 6379

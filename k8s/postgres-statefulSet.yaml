@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          #image: ghcr.io/olishah/postgres-container:3d95102299102e87eb9fb83025ba0b2301835d13
+          #image: ghcr.io/olishah/postgres-container:db40bc1f911f416b4bfd2513820f58e21b142ba9
           image: quay.io/fedora/postgresql-16:latest
           ports:
             - containerPort: 5432
