@@ -25,9 +25,9 @@ spec:
               mountPath: /var/lib/pgsql/data
           envFrom:
             - configMapRef:
-                name: POSTGRESQL_PASSWORD
+                name: postgres-config
           env:
-            - name: POSTGRES_PASSWORD
+            - name: POSTGRESQL_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgres-password
