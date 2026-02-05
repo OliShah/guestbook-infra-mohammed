@@ -17,7 +17,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: frontend
-          image: ghcr.io/olishah/frontend-container:db40bc1f911f416b4bfd2513820f58e21b142ba9
+          image: ghcr.io/olishah/frontend-container:e30f35feef9189f3460e7e3053d68ec19e05dcf0
           imagePullPolicy: Always # set to always if image is not tagged with latest
           ports:
             - name: http
