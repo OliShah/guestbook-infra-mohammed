@@ -22,16 +22,16 @@ spec:
             - containerPort: 5432
           volumeMounts:
             - name: postgres
-              mountPath: /var/lib/postgresql/data
+              mountPath: /var/lib/pgsql/data
           envFrom:
             - configMapRef:
-                name: postgres-config
+                name: POSTGRESQL_PASSWORD
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgres-password
-                  key: POSTGRES_PASSWORD
+                  key: POSTGRESQL_PASSWORD
 
   volumeClaimTemplates:
     - metadata:
