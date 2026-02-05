@@ -27,11 +27,11 @@ spec:
             - configMapRef:
                 name: postgres-config
           env:
-            - name: DB_PASSWORD
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-password
-                  key: DB_PASSWORD
+                  key: POSTGRESSQL_PASSWORD
 
   volumeClaimTemplates:
     - metadata:
